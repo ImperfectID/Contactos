@@ -1,7 +1,11 @@
 package com.example.rodri.contactos;
 
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +18,21 @@ public class Adapater_contactos extends RecyclerView.Adapter<Adapater_contactos.
     ArrayList<lista_contactos> Lista_c;
     private View.OnClickListener listener;
 
+
     public Adapater_contactos(ArrayList<lista_contactos> Lista_c) {
         this.Lista_c = Lista_c;
     }
+
+    public Adapater_contactos(MainActivity mainActivity, ArrayList<lista_contactos> arrayList_contact) {
+    }
+
 
     @NonNull
     @Override
     public Adapater_contactos.ViewHolderContactos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         int layout = 0;
         layout=R.layout.lista;
+
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.lista,null,false);
         view.setOnClickListener(this);
         return new ViewHolderContactos(view);
@@ -65,4 +75,6 @@ public class Adapater_contactos extends RecyclerView.Adapter<Adapater_contactos.
 
         }
     }
+
+
 }

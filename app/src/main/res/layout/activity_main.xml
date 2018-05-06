@@ -25,20 +25,5 @@
         android:layout_height="wrap_content"
 
         />
-        <LinearLayout
-
-            android:layout_weight="0.1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/agregar_contactos"
-            android:text="Agregar contactos de telefono"
-            />
-
-        </LinearLayout>
 
 </LinearLayout>
