@@ -2,6 +2,7 @@ package com.example.rodri.contactos;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
     ArrayList<lista_contactos> cont;
     RecyclerView rv;
+    TextView tera;
 
 
 
@@ -52,7 +55,9 @@ public class MainActivity extends Activity {
 
     public void onClick(View view){
         Utilidades.visualizacion=Utilidades.GRID;
+
         consRecycler();
+
     }
 
 
@@ -68,6 +73,8 @@ public class MainActivity extends Activity {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Toast.makeText(getApplicationContext(),
                         "Selección: "+cont.get
                                 (rv.getChildAdapterPosition(view))
@@ -132,6 +139,7 @@ public class MainActivity extends Activity {
         }
 
     }
+
 
 
 }
